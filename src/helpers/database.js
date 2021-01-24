@@ -2,7 +2,7 @@ const { Sequelize } = require("sequelize");
 
 require("dotenv").config();
 
-const LOGGING = process.env.LOGGING !== "false";
+const LOGGING = process.env.LOGGING !== "false" ? console.log : false;
 const DATABASE = process.env.TESTING === "true" ? "postgres" : process.env.DB_NAME;
 const HOST = process.env.DB_HOST || "localhost";
 const PORT = process.env.DB_PORT || 5432;
